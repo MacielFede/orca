@@ -32,6 +32,7 @@ import { homeAgentNeedsYou, type HomeJumpBackInRow } from '../worktree/home-jump
 import { isResumeTargetConfirmedMissing } from '../worktree/home-resume-card'
 import { newWorkspaceOverlayHref } from '../new-workspace/new-workspace-overlay-route'
 import { useMobileHomeData } from './use-mobile-home-data'
+import { useHomeSparePage } from './use-home-spare-page'
 import { HOME_TABS, type HomeTabId } from './tabs/home-tabs'
 import { MobileHomeAutomationsTab } from './tabs/MobileHomeAutomationsTab'
 import { MobileHomeFab } from './tabs/MobileHomeFab'
@@ -47,6 +48,7 @@ export function MobileHomeScreen() {
   const t = useMobileTranslation()
   useMobileColorScheme()
   const data = useMobileHomeData()
+  useHomeSparePage(data.hostCatalogLoaded ? data.sortedHosts.map((host) => host.id) : [])
   const insets = useSafeAreaInsets()
   const openMobileHostEdit = useOpenMobileHostEdit()
   const openMobileTasks = useOpenMobileTasks()
