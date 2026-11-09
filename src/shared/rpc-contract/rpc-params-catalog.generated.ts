@@ -1436,6 +1436,7 @@ export const RPC_PARAMS_BY_METHOD = {
   'repo.add': RepoPath,
   'repo.addRemote': RepoAddRemote,
   'repo.baseRefDefault': RepoSelector,
+  'repo.checkCloneTarget': RepoClone,
   'repo.clone': RepoClone,
   'repo.create': RepoCreate,
   'repo.gitAvailable': null,
